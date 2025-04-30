@@ -11,7 +11,7 @@
     "unzipper": "^0.10.11"
   },
   "engines": {
-      "node": "18"
+    "node": "18"
   },
   "keywords": [
     "astrologia",
@@ -22,6 +22,7 @@
   "author": "Emanuel Ozorio Dias",
   "license": "ISC",
   "dependencies": {
+    "node-fetch": "^2.7.0",
     "swisseph": "^0.5.17"
   }
 }

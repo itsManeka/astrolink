@@ -1,4 +1,4 @@
-const https = require('https');
+const fetch = require('node-fetch');
 const fs = require('fs');
 const path = require('path');
 const unzipper = require('unzipper');
@@ -13,14 +13,14 @@ if (!fs.existsSync(outputPath)) {
 
 console.log(`🔽 Baixando efemérides de ${url}...`);
 
-https.get(url, (res) => {
-    if (res.statusCode !== 200) {
-        console.error(`❌ Falha no download. Código HTTP ${res.statusCode}`);
-        return;
-    }
-
-    res
-        .pipe(unzipper.Extract({ path: outputPath }))
-        .on('close', () => console.log('✅ Efemérides descompactadas.'))
-        .on('error', (err) => console.error('❌ Erro ao descompactar:', err));
-});
+fetch(url)
+    .then(res => {
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+        return res.body.pipe(unzipper.Extract({ path: outputPath }))
+            .on('close', () => {
+                console.log(`✅ Efemérides extraídas em ${outputPath}`);
+            });
+    })
+    .catch(err => {
+        console.error(`❌ Falha no download:`, err.message);
+    });
