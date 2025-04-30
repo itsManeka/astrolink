@@ -7,15 +7,17 @@ Astrolink é uma biblioteca para cálculos astrológicos e numerológicos, utili
 Você pode instalar o pacote diretamente do npm:
 
 ```bash
-npm install astrolink
+npm install @itsmaneka/astrolink
 ```
+
+Após a instalação, os arquivos de efemérides necessários serão baixados automaticamente.
 
 ## Uso
 
 ### Importação
 
 ```javascript
-const astrolink = require('astrolink');
+const astrolink = require('@itsmaneka/astrolink');
 ```
 
 ### Cálculo do Mapa Astral
@@ -26,7 +28,7 @@ const data = {
     time: '14:30',      // Hora de nascimento no formato HH:mm
     lat: -23.5505,      // Latitude do local de nascimento
     lng: -46.6333,      // Longitude do local de nascimento
-    name: 'João Silva'  // Nome da pessoa
+    name: 'João'  // Nome da pessoa
 };
 
 astrolink.calcularMapaAstral(data)
@@ -36,6 +38,71 @@ astrolink.calcularMapaAstral(data)
     .catch(error => {
         console.error(error);
     });
+```
+
+### Exemplo de Retorno
+
+O retorno do cálculo do mapa astral inclui informações detalhadas sobre os astros, casas, distribuição de elementos, modalidades, polaridades e numerologia. Exemplo:
+
+```json
+{
+    "astros": [
+        {
+            "id": 0,
+            "nome": "Sol",
+            "signo": "Peixes",
+            "grau": 15.28,
+            "grauZodiaco": 345.2809760940058,
+            "classificacao": "Lumiar",
+            "elemento": "Água",
+            "modalidade": "Mutável",
+            "polaridade": "Negativa",
+            "peso": 6
+        },
+        ...
+    ],
+    "casas": [
+        {
+            "casa": 1,
+            "grauZodiaco": 328.70566569778435,
+            "signo": "Aquário",
+            "grau": 28.71
+        },
+        ...
+    ],
+    "distribuicao": {
+        "elementos": {
+            "Água": 30.28,
+            "Terra": 21.6,
+            "Ar": 30.28,
+            "Fogo": 17.84
+        },
+        "modalidades": {
+            "Mutável": 28.17,
+            "Fixo": 66.2,
+            "Cardinal": 5.63
+        },
+        "polaridades": {
+            "Negativa": 51.88,
+            "Positiva": 48.12
+        }
+    },
+    "atributos": {
+        "tonica": "Aquário",
+        "regentes": [
+            "Saturno",
+            "Urano"
+        ]
+    },
+    "numerologia": {
+        "caminhoDaVida": {
+            "bruto": 33,
+            "final": 6,
+            "representacao": "<span class=\"math-inline\">{soma}/</span>{reduzido}"
+        },
+        "nomeroDestino": 8
+    }
+}
 ```
 
 ### Funções Disponíveis
@@ -85,8 +152,14 @@ swisseph-data/
 
 ### Diretório `swisseph-data`
 
-Contém os arquivos de dados necessários para cálculos astronômicos precisos, fornecidos pela biblioteca Swiss Ephemeris.
+Os arquivos de dados necessários para cálculos astronômicos precisos são baixados automaticamente após a instalação do pacote.
 
 ## Contribuição
 
 Contribuições são bem-vindas! Sinta-se à vontade para abrir issues ou enviar pull requests no repositório oficial: [Astrolink no GitHub](https://github.com/itsManeka/astrolink).
+
+
+## Links
+
+- **NPM**: [@itsmaneka/astrolink](https://www.npmjs.com/package/@itsmaneka/astrolink)
+- **GitHub**: [Astrolink no GitHub](https://github.com/itsManeka/astrolink)
