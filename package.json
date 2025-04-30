@@ -1,7 +1,7 @@
 {
   "name": "astrolink",
   "version": "1.0.0",
-  "description": "Pacote de calculos de mapas astrais e numerologias com base na data, hora e local de nascimento e nome utilizando a biblioteca Swiss Ephemeris",
+  "description": "Astrolink é uma biblioteca para cálculos astrológicos e numerológicos, utilizando dados astronômicos precisos e algoritmos avançados.",
   "main": "src/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
