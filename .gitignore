@@ -1,0 +1,27 @@
+# Node modules
+node_modules/
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+
+# dotenv/env
+.env
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Editor configs
+.vscode/
+.idea/
+
+# Runtime
+*.pid
+*.seed
+
+# Optional:
+# Ignore uploads or temp folders
+tmp/
+uploads/

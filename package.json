@@ -1,0 +1,23 @@
+{
+  "name": "astrolink",
+  "version": "1.0.0",
+  "description": "Pacote de calculos de mapas astrais e numerologias com base na data, hora e local de nascimento e nome utilizando a biblioteca Swiss Ephemeris",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "engines": {
+      "node": "18"
+  },
+  "keywords": [
+    "astrologia",
+    "cálculos",
+    "mapa astral",
+    "numerologia"
+  ],
+  "author": "Emanuel Ozorio Dias",
+  "license": "ISC",
+  "dependencies": {
+    "swisseph": "^0.5.17"
+  }
+}
