@@ -25,3 +25,5 @@ Thumbs.db
 # Ignore uploads or temp folders
 tmp/
 uploads/
+
+swisseph-data/

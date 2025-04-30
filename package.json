@@ -1,10 +1,14 @@
 {
-  "name": "astrolink",
+  "name": "@itsmaneka/astrolink",
   "version": "1.0.0",
   "description": "Astrolink é uma biblioteca para cálculos astrológicos e numerológicos, utilizando dados astronômicos precisos e algoritmos avançados.",
   "main": "src/index.js",
   "scripts": {
+    "postinstall": "node scripts/postinstall.js",
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "optionalDependencies": {
+    "unzipper": "^0.10.11"
   },
   "engines": {
       "node": "18"
