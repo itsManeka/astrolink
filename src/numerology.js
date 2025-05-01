@@ -2,7 +2,7 @@ const constants = require('./constants');
 const utils = require('./utils');
 
 function calcularCaminhoDaVida(dataISO) {
-    const numeros = dataISO.replace(/\D/g, ''); // Ex: "19950306"
+    const numeros = dataISO.replace(/\D/g, '');
     const soma = numeros.split('').reduce((acc, dig) => acc + parseInt(dig), 0);
 
     const isMestre = soma === 11 || soma === 22 || soma === 33;

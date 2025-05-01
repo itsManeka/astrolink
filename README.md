@@ -53,7 +53,7 @@ O retorno do cálculo do mapa astral inclui informações detalhadas sobre os as
             "signo": "Peixes",
             "grau": 15.28,
             "grauZodiaco": 345.2809760940058,
-            "classificacao": "Lumiar",
+            "classificacao": "Luminares",
             "elemento": "Água",
             "modalidade": "Mutável",
             "polaridade": "Negativa",
