@@ -49,7 +49,7 @@ async function calcularMapaAstral(data) {
                 const distribuicaoPolaridades = astroCalculations.calcularDistribuicao(astros, 'polaridade');
 
                 const caminhoDaVida = numerology.calcularCaminhoDaVida(date);
-                const nomeroDestino = numerology.calcularNumeroDestino(name);
+                const numeroDestino = numerology.calcularNumeroDestino(name);
 
                 resolve({
                     astros,
@@ -65,7 +65,7 @@ async function calcularMapaAstral(data) {
                     },
                     numerologia: {
                         caminhoDaVida,
-                        nomeroDestino,
+                        numeroDestino,
                     }
                 });
             } catch (error) {

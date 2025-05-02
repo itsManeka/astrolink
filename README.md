@@ -100,7 +100,7 @@ O retorno do cálculo do mapa astral inclui informações detalhadas sobre os as
             "final": 6,
             "representacao": "<span class=\"math-inline\">{soma}/</span>{reduzido}"
         },
-        "nomeroDestino": 8
+        "numeroDestino": 8
     }
 }
 ```
