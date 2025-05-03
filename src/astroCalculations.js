@@ -11,7 +11,7 @@ const calcularAscendenteCasas = async (jd, lat, lng) => {
                 const { signo, grau } = utils.grauParaSigno(deg);
                 return {
                     casa: i + 1,
-                    grauZoadiaco: deg,
+                    grauZodiaco: deg,
                     signo,
                     grau
                 };
@@ -31,35 +31,35 @@ const calcularAscendenteCasas = async (jd, lat, lng) => {
                         consideraCalculo: true,
                         nome: "Ascendente",
                         classificacao: "Pontos Angulares",
-                        grauZoadiaco: ascendente,
+                        grauZodiaco: ascendente,
                         ...utils.grauParaSigno(ascendente),
                     },
                     descendente: {
                         peso: 0.2,
                         nome: "Descendente",
                         classificacao: "Pontos Angulares",
-                        grauZoadiaco: descendente,
+                        grauZodiaco: descendente,
                         ...utils.grauParaSigno(descendente),
                     },
                     meioCeu: {
                         peso: 4.5,
                         nome: "Meio do Céu",
                         classificacao: "Pontos Angulares",
-                        grauZoadiaco: meioCeu,
+                        grauZodiaco: meioCeu,
                         ...utils.grauParaSigno(meioCeu),
                     },
                     fundoCeu: {
                         peso: 0.2,
                         nome: "Fundo do Céu",
                         classificacao: "Pontos Angulares",
-                        grauZoadiaco: fundoCeu,
+                        grauZodiaco: fundoCeu,
                         ...utils.grauParaSigno(fundoCeu),
                     },
                     vertex: {
                         peso: 0.2,
                         nome: "Vertex",
                         classificacao: "Outros",
-                        grauZoadiaco: vertex,
+                        grauZodiaco: vertex,
                         ...utils.grauParaSigno(vertex),
                     },
                 }
@@ -76,7 +76,7 @@ function calcularPlanetas(jd) {
         return new Promise((resolve) => {
             swe.swe_calc_ut(jd, id, swe.SEFLG_SWIEPH, (ret) => {
                 const { signo, grau, elemento, modalidade, polaridade } = utils.grauParaSigno(ret.longitude);
-                resolve({ id, nome, signo, grau, grauZoadiaco: ret.longitude, classificacao, elemento, modalidade, polaridade, peso });
+                resolve({ id, nome, signo, grau, grauZodiaco: ret.longitude, classificacao, elemento, modalidade, polaridade, peso });
             });
         });
     });
@@ -90,17 +90,17 @@ function calcularParteDaFortuna(sol, lua, ascendente, isNoite) {
 
     let fortunaReal = ((fortuna % 360) + 360) % 360;
     const { signo, grau, elemento, modalidade, polaridade } = utils.grauParaSigno(fortunaReal);
-    return { nome: "Parte da Fortuna", signo, grau, grauZoadiaco: fortunaReal, elemento, modalidade, polaridade, classificacao: "Outros", peso: 0.2 };
+    return { nome: "Parte da Fortuna", signo, grau, grauZodiaco: fortunaReal, elemento, modalidade, polaridade, classificacao: "Outros", peso: 0.2 };
 }
 
 function calcularNodoSul(nodoNorte) {
-    let nodoSul = (nodoNorte.grauZoadiaco + 180) % 360;
+    let nodoSul = (nodoNorte.grauZodiaco + 180) % 360;
     const { signo, grau, elemento, modalidade, polaridade } = utils.grauParaSigno(nodoSul);
-    return { nome: "Nodo Sul", signo, grau, grauZoadiaco: nodoSul, elemento, modalidade, polaridade, classificacao: nodoNorte.classificacao, peso: nodoNorte.peso };
+    return { nome: "Nodo Sul", signo, grau, grauZodiaco: nodoSul, elemento, modalidade, polaridade, classificacao: nodoNorte.classificacao, peso: nodoNorte.peso };
 }
 
 function isMapaNoturno(solLongitude, casas) {
-    return solLongitude < casas[6].grauZoadiaco || solLongitude > casas[0].grauZoadiaco;
+    return solLongitude < casas[6].grauZodiaco || solLongitude > casas[0].grauZodiaco;
 }
 
 function calcularSignoDominante(astros) {

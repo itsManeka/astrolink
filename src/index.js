@@ -28,9 +28,9 @@ async function calcularMapaAstral(data) {
                 const lua = planetas.find(p => p.id === swe.SE_MOON);
                 const nodoNorte = planetas.find(p => p.id == swe.SE_MEAN_NODE);
 
-                const isNoite = astroCalculations.isMapaNoturno(sol.grauZoadiaco, casasInfo.casas);
+                const isNoite = astroCalculations.isMapaNoturno(sol.grauZodiaco, casasInfo.casas);
 
-                const fortuna = astroCalculations.calcularParteDaFortuna(sol.grauZoadiaco, lua.grauZoadiaco, casasInfo.pontos.ascendente.grauZoadiaco, isNoite);
+                const fortuna = astroCalculations.calcularParteDaFortuna(sol.grauZodiaco, lua.grauZodiaco, casasInfo.pontos.ascendente.grauZodiaco, isNoite);
                 const nodoSul = astroCalculations.calcularNodoSul(nodoNorte);
 
                 const regentes = astroCalculations.getRegentes(casasInfo.pontos.ascendente.signo);
