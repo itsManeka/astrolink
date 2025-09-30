@@ -1,4 +1,9 @@
+/**
+ * Constantes para cálculos astrológicos e numerológicos
+ * Contém definições de planetas, signos, elementos, modalidades e correspondências numerológicas
+ */
 module.exports = {
+    // Definição dos planetas com [ID_SWISSEPH, NOME, CLASSIFICAÇÃO, PESO]
     PLANETAS: [
         [require('swisseph').SE_SUN, 'Sol', 'Luminares', 6],
         [require('swisseph').SE_MOON, 'Lua', 'Luminares', 6],
@@ -19,6 +24,7 @@ module.exports = {
         [require('swisseph').SE_VESTA, 'Vesta', 'Outros', 0.2],
         [require('swisseph').SE_MEAN_NODE, 'Nodo Norte', 'Nodos Lunares', 0.2]
     ],
+    // Planetas regentes de cada signo (tradicional e moderno)
     regentesPorSigno: {
         "Áries": ["Marte"],
         "Touro": ["Vênus"],
@@ -33,22 +39,27 @@ module.exports = {
         "Aquário": ["Saturno", "Urano"],
         "Peixes": ["Júpiter", "Netuno"],
     },
+    // Elementos dos signos do zodíaco
     elementos: {
         'Áries': 'Fogo', 'Leão': 'Fogo', 'Sagitário': 'Fogo',
         'Touro': 'Terra', 'Virgem': 'Terra', 'Capricórnio': 'Terra',
         'Gêmeos': 'Ar', 'Libra': 'Ar', 'Aquário': 'Ar',
         'Câncer': 'Água', 'Escorpião': 'Água', 'Peixes': 'Água'
     },
+    // Modalidades (qualidades) dos signos
     modalidades: {
         'Áries': 'Cardinal', 'Câncer': 'Cardinal', 'Libra': 'Cardinal', 'Capricórnio': 'Cardinal',
         'Touro': 'Fixo', 'Leão': 'Fixo', 'Escorpião': 'Fixo', 'Aquário': 'Fixo',
         'Gêmeos': 'Mutável', 'Virgem': 'Mutável', 'Sagitário': 'Mutável', 'Peixes': 'Mutável'
     },
+    // Polaridades (masculino/feminino) dos signos
     polaridades: {
         'Áries': 'Positiva', 'Gêmeos': 'Positiva', 'Leão': 'Positiva', 'Libra': 'Positiva', 'Sagitário': 'Positiva', 'Aquário': 'Positiva',
         'Touro': 'Negativa', 'Câncer': 'Negativa', 'Virgem': 'Negativa', 'Escorpião': 'Negativa', 'Capricórnio': 'Negativa', 'Peixes': 'Negativa'
     },
+    // Array dos 12 signos do zodíaco em ordem
     signos: ["Áries", "Touro", "Gêmeos", "Câncer", "Leão", "Virgem", "Libra", "Escorpião", "Sagitário", "Capricórnio", "Aquário", "Peixes"],
+    // Correspondência de letras para números na numerologia
     letraParaNumero: {
         A: 1, J: 1, S: 1,
         B: 2, K: 2, T: 2,
